@@ -1,3 +1,13 @@
+import { useState } from 'react';
+import instanceAxios from '../../utils/axios';
+
 export const Home = () => {
-  return <div className="flex justify-center align-middle w-full">Home</div>;
+  const [response, setResponse] = useState('');
+  instanceAxios.get<string>('/').then(({ data }) => {
+    setResponse(data);
+  });
+
+  return (
+    <div className="flex justify-center align-middle w-full">{response}</div>
+  );
 };
