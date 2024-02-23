@@ -5,7 +5,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
-@app.route('/hello/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def welcome():
     return "Hello World!"
 
