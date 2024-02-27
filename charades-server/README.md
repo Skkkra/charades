@@ -6,6 +6,8 @@ Remember to use virtual environment.
 
 ```python
 py -m venv venv_charades
+# or 👇
+python3 -m venv venv_charades
 ```
 
 ---
@@ -23,5 +25,5 @@ source venv_charades/bin/activate
 Important! If you are planning to add new package, remember to update `requirements.txt` file.
 
 ```python
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
