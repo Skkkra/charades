@@ -4,10 +4,10 @@ type DefaultLayoutProps = {
   children: ReactNode;
 };
 
-export default function DefaultLayout(props: DefaultLayoutProps) {
+export default function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <main className="mx-auto max-w-[1400px] flex flex-col w-full">
-      <div>{props.children}</div>
+      <div>{children}</div>
     </main>
   );
 }
