@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Root } from './routes/root';
+import { RootRouter } from '@routes/root-router';
+import { HomeRouter } from '@routes/home-router';
 
-export const router = createBrowserRouter([{ path: '*', Component: Root }]);
+export const router = createBrowserRouter([RootRouter, HomeRouter], {});
