@@ -1,13 +1,9 @@
-import { ReactNode } from 'react';
+import { Outlet } from 'react-router';
 
-type DefaultLayoutProps = {
-  children: ReactNode;
-};
-
-export default function DefaultLayout({ children }: DefaultLayoutProps) {
+export default function DefaultLayout() {
   return (
-    <main className="mx-auto max-w-[1400px] flex flex-col w-full">
-      <div>{children}</div>
+    <main className="mx-auto max-w-[1400px] flex flex-col w-full text-[2.4rem]">
+      <Outlet />
     </main>
   );
 }
