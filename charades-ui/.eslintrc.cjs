@@ -27,6 +27,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/react-in-jsx-scope': 0,
+    'react/no-unescaped-entities': 0,
   },
   settings: {
     react: {

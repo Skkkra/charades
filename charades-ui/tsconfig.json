@@ -28,6 +28,8 @@
       "@routes/*": ["routes/*"],
       "@utils/*": ["utils/*"],
       "@hooks/*": ["hooks/*"],
+      "@atoms/*": ["atoms/*"],
+      "@ui/*": ["ui/*"],
       "@layouts/*": ["layouts/*"]
     }
   },
