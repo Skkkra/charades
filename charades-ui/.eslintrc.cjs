@@ -27,6 +27,8 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/react-in-jsx-scope': 0,
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
   },
   settings: {
     react: {
