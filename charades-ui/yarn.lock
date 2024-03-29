@@ -1561,7 +1561,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-router-dom: "npm:^6.22.1"
     sass: "npm:^1.71.1"
-    socket.io-client: "npm:^4.7.4"
+    socket.io-client: "npm:^4.7.5"
     tailwindcss: "npm:^3.4.1"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.2.2"
@@ -4481,7 +4481,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"socket.io-client@npm:^4.7.4":
+"socket.io-client@npm:^4.7.5":
   version: 4.7.5
   resolution: "socket.io-client@npm:4.7.5"
   dependencies:
