@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+echo "[Husky] Pre-commit"
+
+cd charades-ui
+
+echo "[Yarn] Run linter"
+
+yarn lint

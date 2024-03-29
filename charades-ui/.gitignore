@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-# Yarn v3
+# Yarn
 .yarn/*
 !.yarn/patches
 !.yarn/plugins

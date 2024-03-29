@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { forwardRef } from 'react';
+
 import { ButtonProps, ButtonStyle } from './button.types';
 
 const ButtonClasses: ButtonStyle = {

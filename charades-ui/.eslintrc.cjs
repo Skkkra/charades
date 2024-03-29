@@ -22,11 +22,10 @@ module.exports = {
     'simple-import-sort',
   ],
   rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     'react/react-in-jsx-scope': 0,
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
     'react/no-unescaped-entities': 0,
   },
   settings: {
