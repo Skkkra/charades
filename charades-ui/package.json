@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": ">=20"
+    "node": "^20.12.0"
   },
+  "packageManager": "yarn@4.1.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -21,8 +22,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",
     "socket.io-client": "^4.7.4",
-    "uuid": "^9.0.1",
-    "yarn": "^1.22.22"
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
@@ -49,6 +49,5 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.4",
     "vite-tsconfig-paths": "^4.3.1"
-  },
-  "packageManager": "yarn@3.8.1+sha256.860bab3ca20acc0476b3229f4841674e62e15453bd8f5dc8d0fea399edd235b6"
+  }
 }
