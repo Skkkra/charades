@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './App.scss';
+
 import { socket } from './socket';
 
 function App() {
