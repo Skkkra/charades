@@ -7,7 +7,7 @@ import App from './App.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
     <App />
   </React.StrictMode>
 );
