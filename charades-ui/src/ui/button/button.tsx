@@ -15,7 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ForwardedButt
 ) {
   return (
     <button
-      className={clsx('p-4 rounded-2xl', ButtonClasses[variant])}
+      className={clsx('h-fit rounded-2xl p-4', ButtonClasses[variant])}
       ref={ref}
       {...rest}
     ></button>
