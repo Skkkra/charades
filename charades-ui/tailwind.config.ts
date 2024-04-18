@@ -4,7 +4,6 @@ import { customColors } from './src/styles/custom-colors';
 
 const tailwindConfig = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  safelist: [],
   theme: {
     extend: {
       fontFamily: {},
@@ -15,12 +14,9 @@ const tailwindConfig = {
         xl: '1200px',
         xxl: '1400px',
       },
-      blur: {},
       colors: { ...customColors },
-      boxShadow: {},
     },
   },
-  plugins: [],
 };
 
 export default tailwindConfig;
