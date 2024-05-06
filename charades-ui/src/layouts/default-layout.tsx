@@ -1,9 +1,22 @@
+import { userAtom } from '@atoms/user/user-atom';
+import Chat from '@components/chat/chat';
+import { useAtomValue } from 'jotai';
 import { Outlet } from 'react-router';
 
 export default function DefaultLayout() {
+  const { uuid } = useAtomValue(userAtom);
   return (
-    <main className="mx-auto max-w-[1400px] flex flex-col w-full text-[2.4rem]">
-      <Outlet />
+    <main className="h-[100vh] w-full overflow-hidden bg-gradient-to-br from-black-300 to-black-400 p-10">
+      <div className="mx-auto grid w-full max-w-[1400px] grid-cols-[1fr_0.45fr] grid-rows-[1fr] text-[2.4rem]">
+        <div>
+          <Outlet />
+        </div>
+        {!!uuid && (
+          <div>
+            <Chat />
+          </div>
+        )}
+      </div>
     </main>
   );
 }

@@ -1,8 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
-export default {
+import { customColors } from './src/styles/custom-colors';
+
+const tailwindConfig = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  safelist: [],
   theme: {
     extend: {
       fontFamily: {},
@@ -13,10 +14,9 @@ export default {
         xl: '1200px',
         xxl: '1400px',
       },
-      blur: {},
-      colors: {},
-      boxShadow: {},
+      colors: { ...customColors },
     },
   },
-  plugins: [],
 };
+
+export default tailwindConfig;

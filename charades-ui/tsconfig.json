@@ -30,7 +30,8 @@
       "@hooks/*": ["hooks/*"],
       "@atoms/*": ["atoms/*"],
       "@ui/*": ["ui/*"],
-      "@layouts/*": ["layouts/*"]
+      "@layouts/*": ["layouts/*"],
+      "@styles/*": ["styles/*"]
     }
   },
   "include": ["src"],
