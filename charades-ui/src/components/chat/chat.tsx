@@ -1,13 +1,17 @@
 import { chatAtom } from '@atoms/chat/chat-atom';
+import { userAtom } from '@atoms/user/user-atom';
+import { useWebsocket } from '@hooks/use-websocket';
 import Button from '@ui/button/button';
 import { useAtomValue, useSetAtom } from 'jotai';
-import { FormEvent, KeyboardEvent, useRef, useState } from 'react';
+import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 
 const USERNAMES = ['Robot', 'Kubica', 'Bumblebee'];
 
 export default function Chat() {
   const { messages } = useAtomValue(chatAtom);
+  const { uuid } = useAtomValue(userAtom);
   const [inputValue, setInputValue] = useState('');
+  const { socket } = useWebsocket();
 
   const setMessages = useSetAtom(chatAtom);
   const formRef = useRef<HTMLFormElement>(null);
@@ -22,18 +26,25 @@ export default function Chat() {
     if (!inputValue) {
       return;
     }
-    setMessages((chat) => {
-      if (chat.messages) {
-        chat.messages.push(inputValue);
-      } else {
-        chat.messages = [inputValue];
-      }
-      return { ...chat };
-    });
+
+    socket.send({ user: uuid, message: inputValue });
     setInputValue('');
 
     event.preventDefault();
   };
+
+  useEffect(() => {
+    socket.on('data', (data) => {
+      setMessages((chat) => {
+        if (chat.messages) {
+          chat.messages.push(data.message);
+        } else {
+          chat.messages = [data.message];
+        }
+        return { ...chat };
+      });
+    });
+  }, [setMessages, socket]);
 
   return (
     <section className="flex h-full flex-col justify-between rounded-lg bg-black-400 p-4">

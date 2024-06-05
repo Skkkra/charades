@@ -23,7 +23,7 @@ export default function Test() {
   };
 
   return (
-    <div className="flex w-full h-full">
+    <div className="flex h-full w-full">
       <Button type="button" onClick={handleClear}>
         Clear uuid
       </Button>
