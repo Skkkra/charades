@@ -8,11 +8,11 @@ jobs:
   auto-assign:
     runs-on: ubuntu-latest
     permissions:
-    pull-requests: write
+      pull-requests: write
     steps:
       - name: "Auto-assign"
         uses: pozil/auto-assign-issue@v2
         with:
-        repo-token: ${{ secrets.GH_TOKEN }}
-        teams: charades-team
-        allowSelfAssign: false
+          repo-token: ${{ secrets.GH_TOKEN }}
+          teams: charades-team
+          allowSelfAssign: false
