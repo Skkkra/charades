@@ -3,13 +3,12 @@ name: Auto assignment
 on:
   pull_request:
     types: [opened, edited, synchronize, reopened]
+  issues:
+    types: [opened]
 
 jobs:
   auto-assign:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
     steps:
       - name: "Auto-assign"
         uses: pozil/auto-assign-issue@v2
