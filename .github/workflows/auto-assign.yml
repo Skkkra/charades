@@ -1,8 +1,9 @@
 name: Auto PR assignment
 
 on:
-  pull_request:
-    types: [opened, edited]
+  [push]
+  # pull_request:
+  #   types: [opened, edited]
 
 jobs:
   auto-assign:
