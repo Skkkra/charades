@@ -15,6 +15,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          repo-token: ${{ secrets.CHARADES_TOKEN }}
+          repo-token: ${{ secrets.GH_TOKEN }}
           teams: charades-team
           allowSelfAssign: false
