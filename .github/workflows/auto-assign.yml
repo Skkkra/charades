@@ -2,17 +2,18 @@ name: Auto PR assignment
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, edited]
 
 jobs:
   auto-assign:
     runs-on: ubuntu-latest
     permissions:
-      issues: write
+      pull-requests: write
     steps:
       - name: "Auto-assign"
+        token: ${{ secrets.GH_TOKEN }}
         uses: pozil/auto-assign-issue@v2
         with:
-          read: Skkkra
+          org: Skkkra
           teams: charades-team
           allowSelfAssign: false
