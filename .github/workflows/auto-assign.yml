@@ -1,4 +1,4 @@
-name: Auto PR assignment
+name: Auto assignment
 
 on:
   [push]
@@ -10,8 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+      issues: write
     steps:
-      - name: "Auto-assign"
+      - name: "Auto-assign "
         uses: pozil/auto-assign-issue@v2
         with:
           repo-token: ${{ secrets.GH_TOKEN }}
