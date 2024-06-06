@@ -10,9 +10,12 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
-    secrets:
-      access-token: ${{ secrets.GH_TOKEN }}
-    uses: pozil/auto-assign-issue@v2
-    with:
-      teams: charades-team
-      allowSelfAssign: false
+
+    steps:
+      - name: "Auto-assign"
+        uses: pozil/auto-assign-issue@v2
+        secrets:
+          access-token: ${{ secrets.GH_TOKEN }}
+        with:
+          teams: charades-team
+          allowSelfAssign: false
