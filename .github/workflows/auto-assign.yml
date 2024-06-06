@@ -16,6 +16,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           repo-token: ${{ secrets.GH_TOKEN }}
+          assignees: ${{ github.actor }}
           teams: charades-team
-          teamIsPullRequestReviewer: true
-          allowSelfAssign: true
