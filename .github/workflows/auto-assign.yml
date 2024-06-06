@@ -12,9 +12,9 @@ jobs:
       pull-requests: write
     steps:
       - name: "Auto-assign"
-        token: ${{ secrets.GH_TOKEN }}
         uses: pozil/auto-assign-issue@v2
         with:
+          token: ${{ secrets.GH_TOKEN }}
           org: Skkkra
           teams: charades-team
           allowSelfAssign: false
