@@ -17,4 +17,6 @@ jobs:
         with:
           repo-token: ${{ secrets.GH_TOKEN }}
           teams: charades-team
-          allowSelfAssign: false
+          teamIsPullRequestReviewer: true
+          allowSelfAssign: true
+          issueNumber: true
