@@ -10,6 +10,10 @@ jobs:
   auto-assign:
     runs-on: ubuntu-latest
     steps:
+      - name: "GitHub authenticate"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: gh auth login
       - name: "Auto-assign"
         uses: pozil/auto-assign-issue@v2
         with:
