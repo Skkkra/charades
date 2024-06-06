@@ -1,8 +1,6 @@
-name: Issue assignment
+name: Auto PR assignment
 
 on:
-  issues:
-    types: [opened]
   pull_request:
     types: [opened]
 
@@ -15,5 +13,6 @@ jobs:
       - name: "Auto-assign"
         uses: pozil/auto-assign-issue@v2
         with:
+          read: Skkkra
           teams: charades-team
           allowSelfAssign: false
