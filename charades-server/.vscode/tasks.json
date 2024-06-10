@@ -1,0 +1,23 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Dev",
+      "detail": "Run flask app in shell",
+      "type": "shell",
+      "command": "flask --app main run",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": false,
+        "clear": true,
+        "close": true
+      }
+    }
+  ]
+}
