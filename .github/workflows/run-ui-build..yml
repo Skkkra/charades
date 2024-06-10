@@ -3,7 +3,7 @@ name: Charades UI Build
 on:
   push:
     paths:
-      - ./charades-ui/**
+      - "./charades-ui/**"
 
 jobs:
   build:
