@@ -1,10 +1,9 @@
-name: Charades Server Build
+name: Charades Server Tests
 
 on:
-  [push]
-  # push:
-  #   paths:
-  #     - ./charades-server/**
+  push:
+    paths:
+      - ./charades-server/**
 
 jobs:
   build:
@@ -26,5 +25,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Build app
-        run: timeout 10 flask --app main run
+          pip install pytest
+      - name: Test app
+        run: pytest

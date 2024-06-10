@@ -1,6 +1,6 @@
 # Installation
 
-Remember to use virtual environment.
+Remember to use **virtual environment**.
 
 ### Set virtual environment
 
