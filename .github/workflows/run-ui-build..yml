@@ -17,7 +17,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Monorepo install
-        uses: ./.github/actions/yarn-nm-install
+        uses: ./.github/actions/yarn
         with:
           cwd: "./charades-ui"
           enable-corepack: true
