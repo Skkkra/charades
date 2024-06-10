@@ -3,7 +3,7 @@ name: Charades Server Tests
 on:
   push:
     paths:
-      - "./charades-server/**"
+      - "charades-server/**"
 
 jobs:
   build:
