@@ -1,0 +1,20 @@
+name: Auto assignment
+
+on:
+  pull_request:
+    types: [opened]
+  issues:
+    types: [opened]
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Auto-assign"
+        uses: pozil/auto-assign-issue@v2
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          repo-token: ${{ secrets.GH_TOKEN }}
+          teams: charades-team
+          abortIfPreviousAssignees: true
