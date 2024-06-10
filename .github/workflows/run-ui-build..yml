@@ -1,6 +1,9 @@
 name: Charades UI Build
 
-on: [push]
+on:
+  push:
+    paths:
+      - ./charades-ui/**
 
 jobs:
   build:
