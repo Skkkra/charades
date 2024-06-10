@@ -6,11 +6,13 @@ on:
       - "charades-ui/**"
 
 jobs:
-  build:
+  ui-build:
+    runs-on: ubuntu-latest
+
     strategy:
       matrix:
         node-version: ["20.x"]
-    runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
