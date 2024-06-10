@@ -1,9 +1,10 @@
 name: Charades Server Build
 
 on:
-  push:
-    paths:
-      - ./charades-server/**
+  [push]
+  # push:
+  #   paths:
+  #     - ./charades-server/**
 
 jobs:
   build:
