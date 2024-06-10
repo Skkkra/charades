@@ -10,15 +10,14 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Websocket
 @socketio.on("connect")
-def connected(socket):
-    print("client has connected")
-    emit("connect", {"data": "id: User connected"})
+def connected():
+    send("Connected")
 
 
 @socketio.on("message")
 def handle_message(data):
     print("data from the frontend: ", str(data))
-    emit("data", {"data": data}, broadcast=True)
+    emit("data", data, broadcast=True)
 
 
 @socketio.on("disconnect")
@@ -43,10 +42,10 @@ def on_leave(data):
     send(username + ' has left the room.', to=room)
 
 
-@app.route('/', methods=['GET', 'POST'])
-def welcome():
-    return "Hello World!"
+# @app.route('/', methods=['GET', 'POST'])
+# def welcome():
+#     return "Hello World!"
 
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True, port=5001, allow_unsafe_werkzeug=True, log_output=False, use_reloader=False)
+    socketio.run(app, debug=True, port=5000, use_reloader=True)
