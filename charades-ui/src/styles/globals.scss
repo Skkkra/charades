@@ -2,5 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer components {
+  .hover-button-primary {
+    @apply hover:bg-blue-600;
+  }
+}
+
+@layer utilities {
+  .disabled {
+    @apply cursor-not-allowed bg-black-200;
+  }
 }

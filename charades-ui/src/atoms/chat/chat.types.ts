@@ -1,3 +1,8 @@
 export interface Chat {
-  messages?: string[];
+  messages?: Message[];
+}
+
+export interface Message {
+  message: string;
+  username: string;
 }

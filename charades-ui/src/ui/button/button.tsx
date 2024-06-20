@@ -4,20 +4,20 @@ import { forwardRef } from 'react';
 import { ButtonProps, ButtonStyle } from './button.types';
 
 const ButtonClasses: ButtonStyle = {
-  primary: 'flex bg-blue-500',
+  primary: 'flex bg-blue-500 hover-button-primary',
   secondary: '',
   tertiary: '',
 };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(function ForwardedButton(
-  { variant = 'primary', ...rest },
+  { variant = 'primary', className, ...rest },
   ref
 ) {
   return (
     <button
-      className={clsx('h-fit rounded-2xl p-4', ButtonClasses[variant])}
-      ref={ref}
       {...rest}
+      className={clsx('h-fit rounded-2xl p-4', ButtonClasses[variant], className)}
+      ref={ref}
     ></button>
   );
 });
