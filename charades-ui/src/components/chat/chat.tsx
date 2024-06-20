@@ -1,5 +1,5 @@
-import { chatAtom } from '@atoms/chat/chat-atom';
 import { Message } from '@atoms/chat/chat.types';
+import { chatAtom } from '@atoms/chat/chat-atom';
 import { userAtom } from '@atoms/user/user-atom';
 import { useWebsocket } from '@hooks/use-websocket';
 import Button from '@ui/button/button';

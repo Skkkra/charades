@@ -1,6 +1,6 @@
 import { userAtom } from '@atoms/user/user-atom';
 import { useAtomValue } from 'jotai';
-import { Suspense, lazy } from 'react';
+import { lazy,Suspense } from 'react';
 import { Outlet } from 'react-router';
 
 const Chat = lazy(() => import('@components/chat/chat'));
