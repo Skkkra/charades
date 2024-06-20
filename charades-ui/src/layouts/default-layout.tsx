@@ -1,7 +1,9 @@
 import { userAtom } from '@atoms/user/user-atom';
-import Chat from '@components/chat/chat';
 import { useAtomValue } from 'jotai';
+import { Suspense, lazy } from 'react';
 import { Outlet } from 'react-router';
+
+const Chat = lazy(() => import('@components/chat/chat'));
 
 export default function DefaultLayout() {
   const { uuid } = useAtomValue(userAtom);
@@ -11,11 +13,7 @@ export default function DefaultLayout() {
         <div>
           <Outlet />
         </div>
-        {!!uuid && (
-          <div>
-            <Chat />
-          </div>
-        )}
+        <Suspense>{!!uuid && <Chat />}</Suspense>
       </div>
     </main>
   );

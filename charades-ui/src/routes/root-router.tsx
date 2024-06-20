@@ -1,7 +1,7 @@
 import Page404 from '@components/page-404';
-import Test from '@components/test';
 import DefaultLayout from '@layouts/default-layout';
 import { PATH } from '@utils/paths';
+import App from 'App';
 import { RouteObject } from 'react-router-dom';
 
 export const RootRouter: RouteObject = {
@@ -14,7 +14,7 @@ export const RootRouter: RouteObject = {
   children: [
     {
       index: true,
-      element: <Test />,
+      element: <App />,
     },
     { path: '*', element: <Page404 /> },
   ],
