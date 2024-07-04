@@ -1,3 +1,4 @@
+import { Message } from '@atoms/chat/chat.types';
 import { chatAtom } from '@atoms/chat/chat-atom';
 import { userAtom } from '@atoms/user/user-atom';
 import { useWebsocket } from '@hooks/use-websocket';
@@ -5,11 +6,9 @@ import Button from '@ui/button/button';
 import { useAtomValue, useSetAtom } from 'jotai';
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
 
-const USERNAMES = ['Robot', 'Kubica', 'Bumblebee'];
-
 export default function Chat() {
   const { messages } = useAtomValue(chatAtom);
-  const { uuid } = useAtomValue(userAtom);
+  const { username, uuid } = useAtomValue(userAtom);
   const [inputValue, setInputValue] = useState('');
   const { socket } = useWebsocket();
 
@@ -27,19 +26,19 @@ export default function Chat() {
       return;
     }
 
-    socket.send({ user: uuid, message: inputValue });
+    socket.send({ user: uuid, username: username, message: inputValue });
     setInputValue('');
 
     event.preventDefault();
   };
 
   useEffect(() => {
-    socket.on('data', (data) => {
+    socket.on('data', (data: Message) => {
       setMessages((chat) => {
         if (chat.messages) {
-          chat.messages.push(data.message);
+          chat.messages.push(data);
         } else {
-          chat.messages = [data.message];
+          chat.messages = [data];
         }
         return { ...chat };
       });
@@ -51,9 +50,9 @@ export default function Chat() {
       <div>Chat</div>
       {messages && !!messages.length && (
         <div className="max-h-[420px] overflow-y-auto rounded-tl-lg rounded-tr-lg bg-black-500 p-4 text-white">
-          {messages.map((message, index) => (
+          {messages.map(({ username, message }, index) => (
             <div key={`${message}-${index}`} className="">
-              <span>{USERNAMES[index % USERNAMES.length]}: </span>
+              <span>{username}: </span>
               <span>{message}</span>
             </div>
           ))}
