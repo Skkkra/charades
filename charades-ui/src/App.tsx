@@ -36,7 +36,7 @@ export default function App() {
       <form className="flex flex-col" onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="username">Username</label>
         <input
-          placeholder="Enter your username..."
+          placeholder="Enter your username... "
           {...register('username', { required: true, minLength: 3 })}
         ></input>
         {errors.username && <p>Username must have at least 3 characters</p>}
