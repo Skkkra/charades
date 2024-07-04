@@ -28,3 +28,6 @@ jobs:
           enable-corepack: true
           cache-node-modules: true
           cache-install-state: true
+
+      - name: Run build
+        run: yarn build
